@@ -21,10 +21,10 @@ flush the cache.
 Command
 -------
 
-    $ ghost add mydevsite.local
+    $ sudo ghost add mydevsite.local
       [Adding] mydevsite.local -> 127.0.0.1
 
-    $ ghost add staging-server.local 67.207.136.164
+    $ sudo ghost add staging-server.local 67.207.136.164
       [Adding] staging-server.local -> 67.207.136.164
 
     $ ghost list
@@ -32,10 +32,10 @@ Command
       mydevsite.local      -> 127.0.0.1
       staging-server.local -> 67.207.136.164
 
-    $ ghost delete mydevsite.local
+    $ sudo ghost delete mydevsite.local
       [Deleting] mydevsite.local
 
-    $ ghost delete_matching test
+    $ sudo ghost delete_matching test
       [Deleting] test2.local
       [Deleting] test.local
 
@@ -43,7 +43,7 @@ Command
     Listing 1 host(s):
       staging-server.local -> 67.207.136.164
 
-    $ ghost modify staging-server.local 64.233.167.99
+    $ sudo ghost modify staging-server.local 64.233.167.99
       [Modifying] staging-server.local -> 64.233.167.99
 
     $ ghost list
@@ -65,6 +65,11 @@ Command
     Listing 1 host(s):
       staging-server.local -> 64.233.167.99
 
+With RVM you need to add `rvmsudo` before the command:
+
+    $ rvmsudo ghost add mydevsite.local
+      [Adding] mydevsite.local -> 127.0.0.1
+
 Library
 -------
 
@@ -75,30 +80,20 @@ to see how to use the library.
 Installation
 ============
 
-    sudo gem install ghost
+    gem install ghost
+    
+Using `sudo` may be necessary in some circumstances, depending on your setup 
+(for example, using the stock Ruby that comes on OS X).
 
 Contributors
 ============
 
-If this list is ever out of date, you can get full contributor list with `git log --format='%aN (%ae)' | sort -u`
-
-* [Alkesh Vaghmaria](https://github.com/alkesh)
-* [Andrei Serdeliuc](https://github.com/extraordinaire)
-* [Ben Hoskings](https://github.com/benhoskings)
-* [Bodaniel Jeanes](https://github.com/bjeanes)
-* [Courtois Simon](https://github.com/simonc)
-* [Felipe Coury](https://github.com/fcoury)
-* [Justin Mazzi](https://github.com/jmazzi)
-* [Lars Fronius](https://github.com/LarsFronius)
-* [Lee Jensen](https://github.com/outerim)
-* [Mitchell Riley](https://github.com/mitchellvriley)
-* [Ryan Bigg](https://github.com/radar)
-* [Sam Beam](https://github.com/sbeam)
+A list of contributors can be found [here](https://github.com/bjeanes/ghost/graphs/contributors)..
 
 Legal Stuff
 ===========
 
-Copyright (c) 2008-2012 Bodaniel Jeanes
+Copyright (c) 2008-2013 Bodaniel Jeanes
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
